@@ -1,0 +1,163 @@
+set exrc
+set secure
+set nocompatible
+set spelllang=pl
+
+" ---------------------------------------------------------------------------
+filetype off                  " required
+
+set hid
+
+set whichwrap+=<,>,h,l
+set wildmenu
+set showcmd
+set showmode
+set formatoptions+=r
+
+" ------ Przemieszczanie kursora góra, dół także w zawiniętych liniach ----"
+map <Down> g<Down>
+map <Up> g<Up>
+vmap j gj
+vmap k gk
+
+
+colorscheme desert
+se number
+se expandtab
+se tabstop=4
+se shiftwidth=4
+se sts=4
+":se smarttab
+se autoindent
+" :se cindent
+se smartindent
+se foldenable
+se foldlevel=0
+se foldlevelstart=-1
+se foldcolumn=3
+se foldminlines=1 
+set guioptions+=b
+se completeopt=menuone,preview
+se wrap
+
+se nobackup
+se nowritebackup
+se noswapfile
+":se switchbuf=newtab,usetab
+
+imap <Home> <Esc>I
+map <Home> ^
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+vmap <End> $<Left>
+nmap <C-t> \bd:po<CR>
+
+" --------------------   KOPIOWANIE, COFANIE, KASOWANIE ---------------------
+vmap <C-c> "+y
+vmap <C-x> "+x
+"map <C-v> "+gp
+"imap <C-v> <Esc>"+gpi
+"map! <C-v> <C-R>+
+"nmap <C-v> "+gp
+"vmap <C-v> "+gp
+imap <C-r>r <C-r>+
+
+imap <C-Del> <Esc><Right>dwi
+
+imap <C-S-Down> <Esc>VxpI
+vmap <C-S-Down> <Esc>VxpV
+
+imap <C-S-Up> <Esc>Vx<Up>PI
+vmap <C-S-Up> <Esc>Vx<Up>PV
+
+" -------------------- VISUAL ZAZNACZANIE -----------------------------------
+
+vmap <C-a> <Esc>ggVG
+
+imap <S-Left> <Esc>v<Left>
+imap <C-S-Left> <Esc>vb
+vmap <S-Left> <Left>
+vmap <C-Left> b
+
+imap <S-Right> <Esc><Right>v<Right>
+imap <C-S-Right> <Esc><Right>vw
+vmap <S-Right> <Right>
+vmap <C-Right> e
+
+imap <S-Up> <Esc>v<Up>
+vmap <S-Up> <Up>
+
+imap <S-Down> <Esc>v<Down>
+vmap <S-Down> <Down>
+
+" ------------------------ PRZESUWANIE NA KONIEC PLIKU ----------------------
+imap <C-End> <Esc>Gi
+noremap <C-End> G
+
+
+" --------------------- ZAPISYWANIE -----------------------------------------
+imap <C-s> <Esc>:w<CR>
+nmap <C-s> :w<CR>
+nmap <C-M-s> :mksession! ~/.vimsession
+
+
+" ------------------------- TABS --------------------------------------------
+nmap <C-S-Ins> :tabnew<CR>
+nmap <C-Del> :tabclose<CR>
+
+" --------------- Włączanie, wyłączanie podświetlania szukanych wyrazów -----
+" function ToggleHLSearch()
+"     if &hls
+"         set nohls
+"     else
+"         set hls
+"     endif
+" endfunction
+" nmap <silent> <C-h> <Esc>:call ToggleHLSearch()<CR>
+
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line

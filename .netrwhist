@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/etc/docker'
+let g:netrw_dirhist_2='/etc/docker/certs.d'
+let g:netrw_dirhist_3='/etc/docker/certs.d/redhat.io'
+let g:netrw_dirhist_4='/home/wojciech/Projects/udemy-docker-mastery'
+let g:netrw_dirhist_5='/home/wojciech/Projects/udemy-docker-mastery/bindmount-sample-1'
+let g:netrw_dirhist_6='/home/wojciech/Projects/udemy-docker-mastery'
+let g:netrw_dirhist_7='/home/wojciech/Projects/udemy-docker-mastery/dockerfile-sample-1'
