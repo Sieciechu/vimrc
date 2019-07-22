@@ -135,7 +135,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 
-Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'docker/docker'
+
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
