@@ -4,7 +4,7 @@ set nocompatible
 set spelllang=pl
 
 " ---------------------------------------------------------------------------
-filetype off                  " required
+filetype off  " required (read https://github.com/VundleVim/Vundle.vim/blob/master/README.md#quick-start )
 
 set hid
 
@@ -14,7 +14,7 @@ set showcmd
 set showmode
 set formatoptions+=r
 
-" ------ Przemieszczanie kursora góra, dół także w zawiniętych liniach ----"
+" ------ Moving cursor up and down, also in folded lines -------------------"
 map <Down> g<Down>
 map <Up> g<Up>
 vmap j gj
@@ -55,7 +55,7 @@ set hlsearch
 
 vmap <End> $<Left>
 
-" --------------------   KOPIOWANIE, COFANIE, KASOWANIE ---------------------
+" --------------------   COPY, UNDO, DELETE   -------------------------------
 vmap <C-c> "+y
 vmap <C-x> "+x
 "map <C-v> "+gp
@@ -67,13 +67,14 @@ imap <C-r>r <C-r>+
 
 imap <C-Del> <Esc><Right>dwi
 
+" -------------------- MOVE LINE DOWN, UP -----------------------------------
 imap <C-S-Down> <Esc>:m+1<CR>gi
 vmap <C-S-Down> <Esc>:m+1<CR>gv
 
 imap <C-S-Up> <Esc>:m-2<CR>gi
 vmap <C-S-Up> <Esc>:m-2<CR>gv
 
-" -------------------- VISUAL ZAZNACZANIE -----------------------------------
+" -------------------- VISUAL SELECTION -------------------------------------
 
 vmap <C-a> <Esc>ggVG
 
@@ -93,14 +94,14 @@ vmap <S-Up> <Up>
 imap <S-Down> <Esc>v<Down>
 vmap <S-Down> <Down>
 
-" ------------------------ PRZESUWANIE NA KONIEC PLIKU ----------------------
+" ------------------------ MOVING TO THE ENF OF FILE ------------------------
 imap <C-End> <Esc>Gi
 noremap <C-End> G
 
 
-" --------------------- ZAPISYWANIE -----------------------------------------
-imap <C-s> <Esc>:w<CR>
-nmap <C-s> :w<CR>
+" ------------------------------- SAVE --------------------------------------
+" imap <C-s> <Esc>:w<CR>
+" nmap <C-s> :w<CR>
 nmap <C-M-s> :mksession! ~/.vimsession
 
 
@@ -108,7 +109,7 @@ nmap <C-M-s> :mksession! ~/.vimsession
 nmap <C-S-Ins> :tabnew<CR>
 nmap <C-Del> :tabclose<CR>
 
-" --------------- Włączanie, wyłączanie podświetlania szukanych wyrazów -----
+" --------------- Turning on/off highlightning of searched phrases ----------
 " function ToggleHLSearch()
 "     if &hls
 "         set nohls
