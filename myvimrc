@@ -99,12 +99,6 @@ imap <C-End> <Esc>Gi
 noremap <C-End> G
 
 
-" ------------------------------- SAVE --------------------------------------
-" imap <C-s> <Esc>:w<CR>
-" nmap <C-s> :w<CR>
-nmap <C-M-s> :mksession! ~/.vimsession
-
-
 " ------------------------- TABS --------------------------------------------
 nmap <C-S-Ins> :tabnew<CR>
 nmap <C-Del> :tabclose<CR>
