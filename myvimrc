@@ -103,6 +103,10 @@ noremap <C-End> G
 nmap <C-S-Ins> :tabnew<CR>
 nmap <C-Del> :tabclose<CR>
 
+
+map <C-n> :NERDTreeToggle<CR>
+
+
 " --------------- Turning on/off highlightning of searched phrases ----------
 " function ToggleHLSearch()
 "     if &hls
@@ -128,6 +132,9 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
+
+Plugin 'scrooloose/nerdtree'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
