@@ -134,6 +134,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 
+Plugin 'stanangeloff/php.vim'
+
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'ekalinin/Dockerfile.vim'
